@@ -1,0 +1,11 @@
+<resources>
+	<string name="app_name">RemoteTreatment</string>
+	<string name="press_again_for_exit">再按一次退出</string>
+	<string name="home_doctor">doctor</string>
+	<string name="home_reserve">reserve</string>
+	<string name="home_record">record</string>
+	<string name="home_setting">setting</string>
+	<string name="butn_reserve">reserve</string>
+	<string name="butn_visit">visit</string>
+	<string name="regist_fee">挂号费%s元</string>
+</resources>
