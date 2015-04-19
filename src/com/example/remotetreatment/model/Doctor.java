@@ -1,6 +1,13 @@
 package com.example.remotetreatment.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+
+import com.example.remotetreatment.util.DateUtil;
 
 public class Doctor implements Serializable {
 
@@ -23,7 +30,9 @@ public class Doctor implements Serializable {
 	private String age;
 	private String gender; // M男，F女
 
-	private boolean isShowDetail;
+	private float score;
+	private int comment;
+	private HashMap<String, List<String>> dates;
 
 	public static Doctor fromTest(int i) {
 		Doctor doc = new Doctor();
@@ -33,14 +42,65 @@ public class Doctor implements Serializable {
 		doc.setTitle("title" + i);
 		doc.setHospital("hostpital" + i);
 		doc.setDept("dept" + 1);
-		doc.setEducation("education" + 1);
-		doc.setExpert("expert" + 1);
-		doc.setRegistFee(10);
+		doc.setEducation("education" + i);
+		doc.setExpert("expert" + i);
+		doc.setRegistFee(10 * i + 10);
 		doc.setStar(i);
-		doc.setPartTime("暂无");
-		doc.setIntro("简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介");
+		doc.setPartTime("暂无" + i);
+		doc.setIntro("简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介" + i);
+		doc.setScore(i);
+		doc.setComment(i);
+
+		Date today = new Date();
+
+		Date date1 = DateUtil.add(today, Calendar.DATE, i);
+		Date date2 = DateUtil.add(today, Calendar.DATE, i + 1);
+		HashMap<String, List<String>> dates = new HashMap<String, List<String>>();
+
+		List<String> times = new ArrayList<String>();
+		times.add("19:00-19:15");
+		times.add("19:15-19:30");
+		times.add("20:45-21:00");
+		dates.put(DateUtil.getDate(date1), times);
+		dates.put(DateUtil.getDate(date2), times);
+
+		doc.setDates(dates);
 
 		return doc;
+	}
+
+	public List<String> getDateString() {
+		if (getDates() == null || getDates().isEmpty()) {
+			return null;
+		}
+
+		List<String> dateStrings = new ArrayList<String>();
+		dateStrings.addAll(getDates().keySet());
+		return dateStrings;
+	}
+
+	public HashMap<String, List<String>> getDates() {
+		return dates;
+	}
+
+	public void setDates(HashMap<String, List<String>> dates) {
+		this.dates = dates;
+	}
+
+	public float getScore() {
+		return score;
+	}
+
+	public void setScore(float score) {
+		this.score = score;
+	}
+
+	public int getComment() {
+		return comment;
+	}
+
+	public void setComment(int comment) {
+		this.comment = comment;
 	}
 
 	public int getStar() {
@@ -153,13 +213,5 @@ public class Doctor implements Serializable {
 
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
-	}
-
-	public boolean isShowDetail() {
-		return isShowDetail;
-	}
-
-	public void setShowDetail(boolean isShowDetail) {
-		this.isShowDetail = isShowDetail;
 	}
 }

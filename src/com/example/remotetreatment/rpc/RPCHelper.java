@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.content.Context;
 
 import com.example.remotetreatment.model.Doctor;
+import com.example.remotetreatment.model.Reserve;
 
 public class RPCHelper extends RPCBase {
 
@@ -33,6 +34,21 @@ public class RPCHelper extends RPCBase {
 		list.add(Doctor.fromTest(page * 10 + 7));
 		list.add(Doctor.fromTest(page * 10 + 8));
 		list.add(Doctor.fromTest(page * 10 + 9));
+		return list;
+	}
+
+	public ArrayList<Reserve> getReserves(int status, int page) {
+		ArrayList<Reserve> list = new ArrayList<Reserve>();
+		list.add(Reserve.fromTest(status, page * 10 + 0));
+		list.add(Reserve.fromTest(status, page * 10 + 1));
+		list.add(Reserve.fromTest(status, page * 10 + 2));
+		list.add(Reserve.fromTest(status, page * 10 + 3));
+		list.add(Reserve.fromTest(status, page * 10 + 4));
+		list.add(Reserve.fromTest(status, page * 10 + 5));
+		list.add(Reserve.fromTest(status, page * 10 + 6));
+		list.add(Reserve.fromTest(status, page * 10 + 7));
+		list.add(Reserve.fromTest(status, page * 10 + 8));
+		list.add(Reserve.fromTest(status, page * 10 + 9));
 		return list;
 	}
 

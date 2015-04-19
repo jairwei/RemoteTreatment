@@ -11,18 +11,31 @@
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
 		android:padding="10dip"
-		android:background="@android:color/white">
+		android:background="@color/white">
 		<LinearLayout
 			android:id="@+id/layout_abbr"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="horizontal"
 			android:gravity="center_vertical">
-			<ImageView
-				android:id="@+id/avatar"
-				android:layout_width="80dip"
-				android:layout_height="80dip"
-				android:background="@android:color/black" />
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:gravity="center_horizontal">
+				<ImageView
+					android:id="@+id/avatar"
+					android:layout_width="80dip"
+					android:layout_height="80dip"
+					android:background="@color/gray_33" />
+				<RatingBar
+					android:id="@+id/star"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:isIndicator="true"
+					android:max="5"
+					style="@style/RatingBar" />
+			</LinearLayout>
 			<LinearLayout
 				android:layout_width="0dip"
 				android:layout_height="wrap_content"
@@ -33,7 +46,7 @@
 					android:id="@+id/base"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:textColor="@android:color/black"
+					android:textColor="@color/gray_33"
 					android:textSize="14sp"
 					android:text="姓名 职称 学历" />
 				<TextView
@@ -41,7 +54,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="5dip"
-					android:textColor="@android:color/black"
+					android:textColor="@color/gray_33"
 					android:textSize="14sp"
 					android:text="医院 科室" />
 				<TextView
@@ -49,7 +62,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="5dip"
-					android:textColor="@android:color/black"
+					android:textColor="@color/gray_33"
 					android:textSize="14sp"
 					android:text="挂号费10.00元" />
 			</LinearLayout>
@@ -57,118 +70,31 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginLeft="10dip"
-				android:orientation="vertical"
-				android:gravity="right">
-				<RatingBar
-					android:id="@+id/star"
+				android:orientation="horizontal">
+				<TextView
+					android:id="@+id/butn_reserve"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:isIndicator="true"
-					android:max="5"
-					style="@style/RatingBar" />
-				<LinearLayout
+					android:padding="10dip"
+					android:background="@color/gray_33"
+					android:textColor="@color/white"
+					android:textSize="14sp"
+					android:text="@string/butn_reserve" />
+				<TextView
+					android:id="@+id/butn_visit"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginTop="10dip"
-					android:orientation="horizontal">
-					<TextView
-						android:id="@+id/butn_reserve"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:padding="10dip"
-						android:background="@android:color/black"
-						android:textColor="@android:color/white"
-						android:textSize="14sp"
-						android:text="@string/butn_reserve" />
-					<TextView
-						android:id="@+id/butn_visit"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:padding="10dip"
-						android:background="@android:color/black"
-						android:textColor="@android:color/white"
-						android:textSize="14sp"
-						android:text="@string/butn_visit"
-						android:layout_marginLeft="5dip" />
-				</LinearLayout>
+					android:padding="10dip"
+					android:background="@color/gray_33"
+					android:textColor="@color/white"
+					android:textSize="14sp"
+					android:text="@string/butn_visit"
+					android:layout_marginLeft="5dip" />
 			</LinearLayout>
-		</LinearLayout>
-		<LinearLayout
-			android:id="@+id/layout_detail"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="vertical"
-			android:layout_marginTop="10dip"
-			android:paddingBottom="10dip"
-			android:visibility="gone">
-			<ImageView
-				android:layout_width="match_parent"
-				android:layout_height="1px"
-				android:background="@android:color/black" />
-			<TextView
-				android:id="@+id/expert"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="10dip"
-				android:textColor="@android:color/black"
-				android:textSize="14sp"
-				android:text="擅长" />
-			<TextView
-				android:id="@+id/part_time"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="10dip"
-				android:textColor="@android:color/black"
-				android:textSize="14sp"
-				android:text="兼职" />
-			<TextView
-				android:id="@+id/intro"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="10dip"
-				android:textColor="@android:color/black"
-				android:textSize="14sp"
-				android:text="简介" />
-		</LinearLayout>
-		<LinearLayout
-			android:id="@+id/layout_reserve"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="vertical"
-			android:layout_marginTop="10dip"
-			android:paddingBottom="10dip"
-			android:visibility="gone">
-			<ImageView
-				android:layout_width="match_parent"
-				android:layout_height="1px"
-				android:background="@android:color/black" />
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="20dip"
-				android:layout_marginTop="10dip"
-				android:background="@android:color/black" />
-		</LinearLayout>
-		<LinearLayout
-			android:id="@+id/layout_confirm"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="vertical"
-			android:layout_marginTop="10dip"
-			android:paddingBottom="10dip"
-			android:visibility="gone">
-			<ImageView
-				android:layout_width="match_parent"
-				android:layout_height="1px"
-				android:background="@android:color/black" />
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="20dip"
-				android:layout_marginTop="10dip"
-				android:background="@android:color/black" />
 		</LinearLayout>
 	</LinearLayout>
 	<ImageView
 		android:layout_width="match_parent"
 		android:layout_height="1px"
-		android:background="@android:color/black" />
+		android:background="@color/gray_d9" />
 </LinearLayout>

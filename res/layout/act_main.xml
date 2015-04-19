@@ -4,7 +4,9 @@
 	android:id="@+id/container"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:orientation="vertical">
+	android:orientation="vertical"
+	android:background="@color/gray_dd">
+	<include layout="@layout/com_page_header" />
 	<com.example.remotetreatment.view.CustViewPager
 		android:id="@+id/pager"
 		android:layout_width="match_parent"

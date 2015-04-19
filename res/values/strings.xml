@@ -1,6 +1,22 @@
 <resources>
 	<string name="app_name">RemoteTreatment</string>
 	<string name="press_again_for_exit">再按一次退出</string>
+	<!-- HEADER -->
+	<string name="header_login">登陆</string>
+	<string name="header_register">注册</string>
+	<string name="header_doctor_detail">医生详情</string>
+	<string name="header_doctor_reserve">预约就诊</string>
+	<!-- BUTTON -->
+	<string name="butn_back">返回</string>
+	<string name="butn_commit">提交订单</string>
+	<string name="butn_confirm">确定</string>
+	<string name="butn_cancel">取消</string>
+	<string name="butn_register">注册</string>
+	<string name="butn_login">登陆</string>
+	<string name="butn_logout">退出登陆</string>
+	<string name="butn_comment">评价</string>
+	<string name="butn_pay">付款</string>
+	<!-- HOME -->
 	<string name="home_doctor">doctor</string>
 	<string name="home_reserve">reserve</string>
 	<string name="home_record">record</string>
@@ -8,4 +24,16 @@
 	<string name="butn_reserve">reserve</string>
 	<string name="butn_visit">visit</string>
 	<string name="regist_fee">挂号费%s元</string>
+	<string name="regist_fee1">￥%s</string>
+	<string name="regist_fee2">/挂号费</string>
+	<string name="score">%s分</string>
+	<string name="comment">%s人评价</string>
+	<!-- Reserve -->
+	<string name="status_bar_all">全部</string>
+	<string name="status_bar_done">完成</string>
+	<string name="status_bar_no_done">未完成</string>
+	<string name="status_reserve">进行中</string>
+	<string name="status_no_pay">尚未支付</string>
+	<string name="status_complate">已成功就诊</string>
+	<string name="status_cancel">取消预约</string>
 </resources>

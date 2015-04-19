@@ -25,11 +25,11 @@ public class GetDoctorsTask extends CommonTask {
 			mRPCHelper = RPCHelper.getInstance(mContext);
 		}
 		try {
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+//			try {
+//				Thread.sleep(2000);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
 			int page = Integer.parseInt(params[0].toString());
 			object = mRPCHelper.getDoctors(page);
 			return true;

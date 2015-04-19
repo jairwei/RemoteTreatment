@@ -4,7 +4,7 @@
 	android:versionCode="1"
 	android:versionName="1.0">
 	<uses-sdk
-		android:minSdkVersion="14"
+		android:minSdkVersion="11"
 		android:targetSdkVersion="19" />
 	<application
 		android:allowBackup="true"
@@ -20,6 +20,16 @@
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
+		</activity>
+		<activity
+			android:name="com.example.remotetreatment.activity.DoctorDetailActivity"
+			android:label="@string/app_name"
+			android:theme="@android:style/Theme.NoTitleBar">
+		</activity>
+		<activity
+			android:name="com.example.remotetreatment.activity.DoctorReserveActivity"
+			android:label="@string/app_name"
+			android:theme="@android:style/Theme.NoTitleBar">
 		</activity>
 	</application>
 </manifest>

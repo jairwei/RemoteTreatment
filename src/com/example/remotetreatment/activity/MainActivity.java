@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.TextView;
 
 import com.example.remotetreatment.R;
 import com.example.remotetreatment.fragment.BaseFragment;
@@ -17,7 +18,6 @@ import com.example.remotetreatment.fragment.RecordFragment;
 import com.example.remotetreatment.fragment.ReserveFragment;
 import com.example.remotetreatment.fragment.SettingFragment;
 import com.example.remotetreatment.util.Toaster;
-import com.example.remotetreatment.util.ViewUtil;
 
 public class MainActivity extends FragmentActivity {
 
@@ -28,8 +28,9 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.act_main);
 
+		initHeader();
 		initView();
 	}
 
@@ -92,12 +93,12 @@ public class MainActivity extends FragmentActivity {
 
 	@Override
 	public void onBackPressed() {
-		if (mPager.getCurrentItem() == 0) {
-			DoctorFragment doctorFragment = (DoctorFragment) ViewUtil.getActiveFragment(this, mPager, 0);
-			if (!doctorFragment.onBackPressed()) {
-				return;
-			}
-		}
+		// if (mPager.getCurrentItem() == 0) {
+		// DoctorFragment doctorFragment = (DoctorFragment) ViewUtil.getActiveFragment(this, mPager, 0);
+		// if (!doctorFragment.onBackPressed()) {
+		// return;
+		// }
+		// }
 
 		if (mBackKeyPressed) {
 			super.onBackPressed();
@@ -112,5 +113,12 @@ public class MainActivity extends FragmentActivity {
 				mBackKeyPressed = false;
 			}
 		}, 1000 * 2);
+	}
+
+	TextView mHeaderTitle;
+
+	private void initHeader() {
+		mHeaderTitle = (TextView) findViewById(R.id.header_title);
+		mHeaderTitle.setText(R.string.app_name);
 	}
 }

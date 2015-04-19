@@ -8,9 +8,21 @@ public class Reserve implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int id;
-	private long time;
+	private String time;
 	private Doctor doctor;
 	private int status = STATUS_RESERVE;
+
+	public static Reserve fromTest(int status, int i) {
+		Doctor d = new Doctor();
+		d.setName("周**" + i);
+
+		Reserve reserve = new Reserve();
+		reserve.setId(i);
+		reserve.setTime("2015-10-12 12:12-13:13");
+		reserve.doctor = d;
+		reserve.status = 1;
+		return reserve;
+	}
 
 	public int getId() {
 		return id;
@@ -20,11 +32,11 @@ public class Reserve implements Serializable {
 		this.id = id;
 	}
 
-	public long getTime() {
+	public String getTime() {
 		return time;
 	}
 
-	public void setTime(long time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 
@@ -44,8 +56,9 @@ public class Reserve implements Serializable {
 		this.status = status;
 	}
 
-	public static final int STATUS_RESERVE = 0;// 进行中
-	public static final int STATUS_NOT_PAY = 1;// 尚未支付
-	public static final int STATUS_COMPLATE = 2;// 已成功就诊
-	public static final int STATUS_CANCEL = 3;// 已取消预约
+	public static final int STATUS_ALL = 0;// 全部
+	public static final int STATUS_RESERVE = 1;// 进行中
+	public static final int STATUS_NO_PAY = 2;// 尚未支付
+	public static final int STATUS_COMPLATE = 3;// 已成功就诊
+	public static final int STATUS_CANCEL = 4;// 已取消预约
 }

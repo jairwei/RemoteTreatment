@@ -2,16 +2,15 @@ package com.example.remotetreatment.view.listview.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
-import com.example.remotetreatment.Base;
 import com.example.remotetreatment.R;
 import com.example.remotetreatment.model.Doctor;
 import com.example.remotetreatment.model.ViewHolder.DoctorHolder;
+import com.example.remotetreatment.util.IntentUtil;
 
 public class DoctorAdapter extends AbsListAdapter<Doctor> {
 
@@ -34,9 +33,9 @@ public class DoctorAdapter extends AbsListAdapter<Doctor> {
 			h.fee.setText(mContext.getString(R.string.regist_fee, d.getRegistFee()));
 
 			h.star.setRating(d.getStar());
-			h.expert.setText(d.getExpert());
-			h.partTime.setText(d.getPartTime());
-			h.intro.setText(d.getIntro());
+			// h.expert.setText(d.getExpert());
+			// h.partTime.setText(d.getPartTime());
+			// h.intro.setText(d.getIntro());
 
 			h.butnReserve.setOnClickListener(new OnClickListener() {
 				@Override
@@ -64,15 +63,17 @@ public class DoctorAdapter extends AbsListAdapter<Doctor> {
 	}
 
 	private void showDetail(Doctor doctor) {
-		Intent intent = new Intent(Base.ACTION_SHOW_DOCTOR_DETAIL);
-		intent.putExtra(Base.EXTRA_DOCTOR, doctor);
-		mContext.sendBroadcast(intent);
+		IntentUtil.showDoctorDetail(mContext, doctor);
+		// Intent intent = new Intent(Base.ACTION_SHOW_DOCTOR_DETAIL);
+		// intent.putExtra(Base.EXTRA_DOCTOR, doctor);
+		// mContext.sendBroadcast(intent);
 	}
 
 	private void showReserve(Doctor doctor) {
-		Intent intent = new Intent(Base.ACTION_SHOW_DOCTOR_RESERVE);
-		intent.putExtra(Base.EXTRA_DOCTOR, doctor);
-		mContext.sendBroadcast(intent);
+		IntentUtil.showDoctorReserve(mContext, doctor);
+		// Intent intent = new Intent(Base.ACTION_SHOW_DOCTOR_RESERVE);
+		// intent.putExtra(Base.EXTRA_DOCTOR, doctor);
+		// mContext.sendBroadcast(intent);
 	}
 
 	private void visit(Doctor doctor) {
