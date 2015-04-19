@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:state_pressed="true">
+		<shape>
+			<corners
+				android:topLeftRadius="14dp"
+				android:topRightRadius="14dp"
+				android:bottomLeftRadius="14dp"
+				android:bottomRightRadius="14dp" /><!-- 设置圆角半径 -->
+			<!-- 填充 -->
+			<solid android:color="@color/green" /><!-- 填充的颜色 -->
+		</shape>
+	</item>
+	<item android:state_checked="true">
+		<shape>
+			<corners
+				android:topLeftRadius="14dp"
+				android:topRightRadius="14dp"
+				android:bottomLeftRadius="14dp"
+				android:bottomRightRadius="14dp" /><!-- 设置圆角半径 -->
+			<!-- 填充 -->
+			<solid android:color="@color/green" /><!-- 填充的颜色 -->
+		</shape>
+	</item>
+	<item android:state_selected="true">
+		<shape>
+			<corners
+				android:topLeftRadius="14dp"
+				android:topRightRadius="14dp"
+				android:bottomLeftRadius="14dp"
+				android:bottomRightRadius="14dp" /><!-- 设置圆角半径 -->
+			<!-- 填充 -->
+			<solid android:color="@color/green" /><!-- 填充的颜色 -->
+		</shape>
+	</item>
+	<item>
+		<shape>
+			<corners
+				android:topLeftRadius="14dp"
+				android:topRightRadius="14dp"
+				android:bottomLeftRadius="14dp"
+				android:bottomRightRadius="14dp" /><!-- 设置圆角半径 -->
+			<!-- 填充 -->
+			<solid android:color="@android:color/transparent" /><!-- 填充的颜色 -->
+		</shape>
+	</item>
+</selector>
