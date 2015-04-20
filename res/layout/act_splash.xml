@@ -5,7 +5,12 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
-	android:background="@color/gray_dd">
-	<include layout="@layout/com_page_header" />
-	<include layout="@layout/com_account" />
+	android:background="@color/white">
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center"
+		android:textColor="@color/gray_33"
+		android:textSize="16sp"
+		android:text="welcome" />
 </LinearLayout>

@@ -13,6 +13,7 @@ import com.example.remotetreatment.R;
 import com.example.remotetreatment.model.UserAccount;
 import com.example.remotetreatment.util.AccountUtil;
 import com.example.remotetreatment.util.ImageLoaderUtil;
+import com.example.remotetreatment.util.IntentUtil;
 
 @SuppressLint("ValidFragment")
 public class SettingFragment extends BaseFragment {
@@ -90,6 +91,12 @@ public class SettingFragment extends BaseFragment {
 	}
 
 	protected void logout() {
-
+		try {
+			AccountUtil.setUserAccount(null);
+			IntentUtil.showLogin(mAct);
+			mAct.finish();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -1,0 +1,50 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/container"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="10dip">
+	<EditText
+		android:id="@+id/phone"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:inputType="phone"
+		android:textColor="@color/gray_33"
+		android:textSize="16sp"
+		android:textColorHint="@color/gray_dd"
+		android:hint="手机号" />
+	<EditText
+		android:id="@+id/password"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dip"
+		android:inputType="textPassword"
+		android:textColor="@color/gray_33"
+		android:textSize="16sp"
+		android:textColorHint="@color/gray_dd"
+		android:hint="密码" />
+	<TextView
+		android:id="@+id/butn_login"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="30dip"
+		android:gravity="center"
+		android:background="@color/gray_33"
+		android:padding="10dip"
+		android:textColor="@color/white"
+		android:textSize="16sp"
+		android:text="@string/butn_login" />
+	<TextView
+		android:id="@+id/butn_register"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="30dip"
+		android:gravity="center"
+		android:background="@color/gray_33"
+		android:padding="10dip"
+		android:textColor="@color/white"
+		android:textSize="16sp"
+		android:text="@string/butn_register" />
+</LinearLayout>

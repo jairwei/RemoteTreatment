@@ -19,7 +19,7 @@ import com.example.remotetreatment.fragment.ReserveFragment;
 import com.example.remotetreatment.fragment.SettingFragment;
 import com.example.remotetreatment.util.Toaster;
 
-public class MainActivity extends FragmentActivity {
+public class HomeActivity extends FragmentActivity {
 
 	private ViewPager mPager;
 	private GroupAdapter mAdapter;
@@ -28,7 +28,7 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.act_main);
+		setContentView(R.layout.act_home);
 
 		initHeader();
 		initView();

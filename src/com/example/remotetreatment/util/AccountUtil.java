@@ -17,7 +17,7 @@ public class AccountUtil {
 				user.setPassword("123456");
 				user.setToken("123");
 				user.setEmail("weijiguang@gmail.com");
-				user.setId(Base.ID_TYPE);
+				user.setIdType(Base.ID_TYPE);
 				user.setIdNumber("2390001929318238");
 				user.setGender("男");
 			}

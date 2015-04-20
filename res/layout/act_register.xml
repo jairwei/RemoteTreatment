@@ -7,4 +7,5 @@
 	android:orientation="vertical"
 	android:background="@color/gray_dd">
 	<include layout="@layout/com_page_header" />
+	<include layout="@layout/com_account" />
 </LinearLayout>
