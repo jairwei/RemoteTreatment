@@ -19,8 +19,10 @@ public class DoctorDetailActivity extends Activity {
 	private Doctor mDoctor;
 
 	private ImageView mAvatar;
-	private TextView mBase;
+	private TextView mName;
+	private TextView mEducation;
 	private TextView mHospital;
+	private TextView mDept;
 	private TextView mFee;
 	private View mButnReserve;
 	private RatingBar mStar;
@@ -50,8 +52,10 @@ public class DoctorDetailActivity extends Activity {
 		final Doctor d = mDoctor;
 
 		mAvatar = (ImageView) findViewById(R.id.avatar);
-		mBase = (TextView) findViewById(R.id.base);
+		mName = (TextView) findViewById(R.id.name);
+		mEducation = (TextView) findViewById(R.id.education);
 		mHospital = (TextView) findViewById(R.id.hospital);
+		mDept = (TextView) findViewById(R.id.dept);
 		mFee = (TextView) findViewById(R.id.fee);
 		mButnReserve = findViewById(R.id.butn_reserve);
 		mStar = (RatingBar) findViewById(R.id.star);
@@ -62,7 +66,7 @@ public class DoctorDetailActivity extends Activity {
 		mIntro = (TextView) findViewById(R.id.intro);
 
 		ImageLoaderUtil.display(d.getAvatar(), mAvatar);
-		mBase.setText(d.getName() + " " + d.getTitle() + " " + d.getEducation());
+		mName.setText(d.getName() + " " + d.getTitle() + " " + d.getEducation());
 		mHospital.setText(d.getHospital() + " " + d.getDept());
 		mFee.setText(getString(R.string.regist_fee1, d.getRegistFee()));
 		mStar.setRating(d.getStar());

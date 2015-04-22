@@ -14,29 +14,56 @@
 			android:id="@+id/avatar"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:background="@color/blue" />
+			android:background="@color/blue"
+			android:src="@drawable/doctor"
+			android:scaleType="centerCrop" />
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_alignParentBottom="true"
 			android:padding="10dip"
 			android:orientation="vertical"
-			android:background="@color/trans_gray">
-			<TextView
-				android:id="@+id/base"
+			android:background="@color/trans_black">
+			<LinearLayout
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:textColor="@color/white"
-				android:textSize="16sp"
-				android:text="姓名 职称 学历" />
-			<TextView
-				android:id="@+id/hospital"
+				android:orientation="horizontal">
+				<TextView
+					android:id="@+id/name"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="@color/white"
+					android:textSize="14sp"
+					android:text="" />
+				<TextView
+					android:id="@+id/education"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5dip"
+					android:textColor="@color/white"
+					android:textSize="14sp"
+					android:text="" />
+			</LinearLayout>
+			<LinearLayout
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="5dip"
-				android:textColor="@color/white"
-				android:textSize="16sp"
-				android:text="医院 科室" />
+				android:orientation="horizontal">
+				<TextView
+					android:id="@+id/hospital"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@color/white"
+					android:textSize="14sp"
+					android:text="" />
+				<TextView
+					android:id="@+id/dept"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@color/white"
+					android:textSize="14sp"
+					android:text="" />
+			</LinearLayout>
 		</LinearLayout>
 	</RelativeLayout>
 	<LinearLayout
@@ -58,15 +85,15 @@
 			android:layout_width="0dip"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
-			android:textColor="@color/gray_dd"
-			android:textSize="16sp"
+			android:textColor="@color/gray_99"
+			android:textSize="14sp"
 			android:text="@string/regist_fee2" />
 		<TextView
 			android:id="@+id/butn_reserve"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:background="@color/gray_33"
-			android:padding="10dip"
+			android:gravity="center"
+			android:background="@drawable/shape_butn_reserve1"
 			android:textColor="@color/white"
 			android:textSize="16sp"
 			android:text="@string/butn_reserve" />
@@ -92,16 +119,16 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="10dip"
-			android:textColor="@color/gray_dd"
-			android:textSize="16sp"
+			android:textColor="@color/gray_99"
+			android:textSize="14sp"
 			android:text="3.2分" />
 		<TextView
 			android:id="@+id/comment"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="10dip"
-			android:textColor="@color/gray_dd"
-			android:textSize="16sp"
+			android:textColor="@color/gray_99"
+			android:textSize="14sp"
 			android:text="213人评价"
 			android:drawableRight="@drawable/icon_arrow_right" />
 	</LinearLayout>

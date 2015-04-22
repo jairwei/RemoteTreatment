@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.remotetreatment.R;
-import com.example.remotetreatment.model.UserAccount;
-import com.example.remotetreatment.util.AccountUtil;
 import com.example.remotetreatment.util.IntentUtil;
 
 public class SplashActivity extends Activity {
@@ -24,12 +22,12 @@ public class SplashActivity extends Activity {
 			@Override
 			public void run() {
 				try {
-					UserAccount user = AccountUtil.getUserAccount();
-					if (user == null || user.getId() == 0) {
-						IntentUtil.showRegister(SplashActivity.this);
-					} else {
-						IntentUtil.showHome(SplashActivity.this);
-					}
+					// UserAccount user = AccountUtil.getUserAccount();
+					// if (user == null || user.getId() == 0) {
+					// IntentUtil.showRegister(SplashActivity.this);
+					// } else {
+					IntentUtil.showHome(SplashActivity.this);
+					// }
 					finish();
 				} catch (Exception e) {
 					e.printStackTrace();

@@ -168,6 +168,17 @@
 			android:text="" />
 	</LinearLayout>
 	<TextView
+		android:id="@+id/butn_login"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dip"
+		android:gravity="center"
+		android:background="@color/gray_33"
+		android:padding="10dip"
+		android:textColor="@color/white"
+		android:textSize="16sp"
+		android:text="@string/butn_login" />
+	<TextView
 		android:id="@+id/butn_logout"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"

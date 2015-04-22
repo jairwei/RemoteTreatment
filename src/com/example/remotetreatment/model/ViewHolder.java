@@ -31,8 +31,11 @@ public class ViewHolder {
 		public View layoutAbbr;
 
 		public ImageView avatar;
-		public TextView base;
+		public TextView name;
+		public TextView title;
+		public TextView dept;
 		public TextView hospital;
+		public TextView education;
 		public TextView fee;
 		public RatingBar star;
 		public TextView butnReserve;
@@ -43,8 +46,11 @@ public class ViewHolder {
 			layoutAbbr = v.findViewById(R.id.layout_abbr);
 
 			avatar = (ImageView) v.findViewById(R.id.avatar);
-			base = (TextView) v.findViewById(R.id.base);
+			name = (TextView) v.findViewById(R.id.name);
+			title = (TextView) v.findViewById(R.id.title);
+			dept = (TextView) v.findViewById(R.id.dept);
 			hospital = (TextView) v.findViewById(R.id.hospital);
+			education = (TextView) v.findViewById(R.id.education);
 			fee = (TextView) v.findViewById(R.id.fee);
 			star = (RatingBar) v.findViewById(R.id.star);
 			butnReserve = (TextView) v.findViewById(R.id.butn_reserve);

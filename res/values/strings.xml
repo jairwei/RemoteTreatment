@@ -23,7 +23,6 @@
 	<string name="home_setting">setting</string>
 	<string name="butn_reserve">reserve</string>
 	<string name="butn_visit">visit</string>
-	<string name="regist_fee">挂号费%s元</string>
 	<string name="regist_fee1">￥%s</string>
 	<string name="regist_fee2">/挂号费</string>
 	<string name="score">%s分</string>

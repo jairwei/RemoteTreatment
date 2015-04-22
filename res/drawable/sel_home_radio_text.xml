@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 	<item
-		android:drawable="@null"
-		android:color="@color/white"
+		android:color="@color/gray_99"
 		android:state_pressed="true" />
 	<item
-		android:drawable="@null"
-		android:color="@color/white"
+		android:color="@color/gray_99"
 		android:state_checked="true" />
 	<item
-		android:drawable="@null"
-		android:color="@color/white"
+		android:color="@color/gray_99"
 		android:state_selected="true" />
-	<item
-		android:drawable="@null"
-		android:color="@color/gray_33" />
+	<item android:color="@color/gray_99" />
 </selector>

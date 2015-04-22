@@ -15,6 +15,6 @@
 	<color name="gray_dd">#FFDDDDDD</color>
 	<color name="gray_d9">#FFD9D9D9</color>
 	<color name="gray_ef">#FFEFEFEF</color>
-	<color name="trans_gray">#66DDDDDD</color>
+	<color name="trans_gray">#AADDDDDD</color>
 	<color name="trans_black">#66000000</color>
 </resources>

@@ -28,6 +28,7 @@ public class SettingFragment extends BaseFragment {
 	private TextView mIdNumber;
 	private TextView mPhone;
 	private TextView mEmail;
+	private View mButnLogin;
 	private View mButnLogout;
 
 	public static SettingFragment newInstance() {
@@ -67,34 +68,55 @@ public class SettingFragment extends BaseFragment {
 		mIdNumber = (TextView) mRoot.findViewById(R.id.id_number);
 		mPhone = (TextView) mRoot.findViewById(R.id.phone);
 		mEmail = (TextView) mRoot.findViewById(R.id.email);
+		mButnLogin = mRoot.findViewById(R.id.butn_login);
 		mButnLogout = mRoot.findViewById(R.id.butn_logout);
 
+		setUserFace();
+	}
+
+	private void setUserFace() {
 		UserAccount user = AccountUtil.getUserAccount();
 		if (user == null) {
-			return;
+			ImageLoaderUtil.display(user.getAvatar(), mAvatar);
+			mName.setText(user.getName());
+			mGender.setText(user.getGender());
+			mIdType.setText(mAct.getResources().getStringArray(R.array.id_type)[user.getIdType()]);
+			mIdNumber.setText(user.getIdNumber());
+			mPhone.setText(user.getPhone());
+			mEmail.setText(user.getEmail());
+
+			mButnLogin.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					IntentUtil.showLogin(mAct);
+				}
+			});
+			mButnLogout.setVisibility(View.GONE);
+		} else {
+			ImageLoaderUtil.display(user.getAvatar(), mAvatar);
+			mName.setText(user.getName());
+			mGender.setText(user.getGender());
+			mIdType.setText(mAct.getResources().getStringArray(R.array.id_type)[user.getIdType()]);
+			mIdNumber.setText(user.getIdNumber());
+			mPhone.setText(user.getPhone());
+			mEmail.setText(user.getEmail());
+
+			mButnLogin.setVisibility(View.GONE);
+			mButnLogout.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					logout();
+				}
+			});
 		}
-
-		ImageLoaderUtil.display(user.getAvatar(), mAvatar);
-		mName.setText(user.getName());
-		mGender.setText(user.getGender());
-		mIdType.setText(mAct.getResources().getStringArray(R.array.id_type)[user.getIdType()]);
-		mIdNumber.setText(user.getIdNumber());
-		mPhone.setText(user.getPhone());
-		mEmail.setText(user.getEmail());
-
-		mButnLogout.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				logout();
-			}
-		});
 	}
 
 	protected void logout() {
 		try {
 			AccountUtil.setUserAccount(null);
-			IntentUtil.showLogin(mAct);
-			mAct.finish();
+			setUserFace();
+			// IntentUtil.showLogin(mAct);
+			// mAct.finish();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

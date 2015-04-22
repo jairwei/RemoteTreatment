@@ -28,9 +28,12 @@ public class DoctorAdapter extends AbsListAdapter<Doctor> {
 			final Doctor d = getItem(position);
 			final DoctorHolder h = new DoctorHolder(convertView);
 
-			h.base.setText(d.getName() + " " + d.getTitle() + " " + d.getEducation());
-			h.hospital.setText(d.getHospital() + " " + d.getDept());
-			h.fee.setText(mContext.getString(R.string.regist_fee, d.getRegistFee()));
+			h.name.setText(d.getName());
+			h.title.setText(d.getTitle());
+			h.dept.setText(d.getDept());
+			h.hospital.setText(d.getHospital());
+			h.education.setText(d.getEducation());
+			h.fee.setText(mContext.getString(R.string.regist_fee1, d.getRegistFee()));
 
 			h.star.setRating(d.getStar());
 			// h.expert.setText(d.getExpert());

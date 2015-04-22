@@ -15,10 +15,22 @@
 			android:checked="true"
 			style="@style/HomeRadioButton"
 			android:text="@string/status_bar_all" />
+		<ImageView
+			android:layout_width="1px"
+			android:layout_height="match_parent"
+			android:layout_marginTop="10dip"
+			android:layout_marginBottom="10dip"
+			android:background="@color/gray_dd" />
 		<RadioButton
 			android:id="@+id/butn_done"
 			style="@style/HomeRadioButton"
 			android:text="@string/status_bar_done" />
+		<ImageView
+			android:layout_width="1px"
+			android:layout_height="match_parent"
+			android:layout_marginTop="10dip"
+			android:layout_marginBottom="10dip"
+			android:background="@color/gray_dd" />
 		<RadioButton
 			android:id="@+id/butn_no_done"
 			style="@style/HomeRadioButton"

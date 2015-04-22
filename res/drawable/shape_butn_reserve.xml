@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+	<corners
+		android:topLeftRadius="2dip"
+		android:topRightRadius="2dip"
+		android:bottomLeftRadius="2dip"
+		android:bottomRightRadius="2dip" /><!-- 设置圆角半径 -->
+	<!-- 填充 -->
+	<stroke
+		android:color="@color/green"
+		android:width="1px" />
+	<padding
+		android:left="5dip"
+		android:top="3dip"
+		android:right="5dip"
+		android:bottom="3dip" />
+</shape>

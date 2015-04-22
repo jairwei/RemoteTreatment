@@ -27,7 +27,9 @@
 					android:id="@+id/avatar"
 					android:layout_width="80dip"
 					android:layout_height="80dip"
-					android:background="@color/gray_33" />
+					android:background="@color/gray_33"
+					android:src="@drawable/doctor"
+					android:scaleType="centerCrop" />
 				<RatingBar
 					android:id="@+id/star"
 					android:layout_width="wrap_content"
@@ -42,29 +44,75 @@
 				android:layout_weight="1"
 				android:layout_marginLeft="10dip"
 				android:orientation="vertical">
-				<TextView
-					android:id="@+id/base"
+				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:textColor="@color/gray_33"
-					android:textSize="14sp"
-					android:text="姓名 职称 学历" />
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/name"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="111" />
+					<TextView
+						android:id="@+id/title"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="5dip"
+						android:gravity="center"
+						android:background="@drawable/shape_butn_title"
+						android:textColor="@color/white"
+						android:textSize="14sp"
+						android:text="111" />
+				</LinearLayout>
 				<TextView
-					android:id="@+id/hospital"
+					android:id="@+id/dept"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dip"
+					android:textColor="@color/gray_99"
+					android:textSize="14sp"
+					android:text="111" />
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dip">
+					<TextView
+						android:id="@+id/hospital"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/gray_99"
+						android:textSize="14sp"
+						android:text="111" />
+					<TextView
+						android:id="@+id/education"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="5dip"
+						android:textColor="@color/gray_99"
+						android:textSize="14sp"
+						android:text="111" />
+				</LinearLayout>
+				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="5dip"
-					android:textColor="@color/gray_33"
-					android:textSize="14sp"
-					android:text="医院 科室" />
-				<TextView
-					android:id="@+id/fee"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="5dip"
-					android:textColor="@color/gray_33"
-					android:textSize="14sp"
-					android:text="挂号费10.00元" />
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/fee"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/yellow"
+						android:textSize="14sp"
+						android:text="111" />
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/gray_99"
+						android:textSize="14sp"
+						android:text="@string/regist_fee2" />
+				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
 				android:layout_width="wrap_content"
@@ -75,26 +123,24 @@
 					android:id="@+id/butn_reserve"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:padding="10dip"
-					android:background="@color/gray_33"
-					android:textColor="@color/white"
-					android:textSize="14sp"
+					android:background="@drawable/shape_butn_reserve"
+					android:textColor="@color/green"
+					android:textSize="12sp"
 					android:text="@string/butn_reserve" />
 				<TextView
 					android:id="@+id/butn_visit"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:padding="10dip"
-					android:background="@color/gray_33"
-					android:textColor="@color/white"
-					android:textSize="14sp"
-					android:text="@string/butn_visit"
-					android:layout_marginLeft="5dip" />
+					android:layout_marginLeft="5dip"
+					android:background="@drawable/shape_butn_reserve"
+					android:textColor="@color/green"
+					android:textSize="12sp"
+					android:text="@string/butn_visit" />
 			</LinearLayout>
 		</LinearLayout>
 	</LinearLayout>
 	<ImageView
 		android:layout_width="match_parent"
 		android:layout_height="1px"
-		android:background="@color/gray_d9" />
+		android:background="@color/gray_dd" />
 </LinearLayout>
