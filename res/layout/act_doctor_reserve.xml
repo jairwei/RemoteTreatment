@@ -10,124 +10,134 @@
 		android:layout_height="match_parent"
 		android:orientation="vertical">
 		<include layout="@layout/com_page_header" />
-		<com.example.remotetreatment.view.CalendarView
-			android:id="@+id/calendar_view"
+		<ScrollView
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content" />
-		<LinearLayout
-			android:id="@+id/layout_doctor"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="10dip"
-			android:padding="10dip"
-			android:orientation="horizontal"
-			android:background="@color/white">
-			<TextView
-				android:layout_width="0dip"
+			android:layout_height="match_parent"
+			android:scrollbars="none">
+			<LinearLayout
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:textColor="@color/gray_33"
-				android:textSize="14sp"
-				android:text="预约医生" />
-			<TextView
-				android:id="@+id/doctor_name"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textColor="@color/gray_33"
-				android:textSize="14sp"
-				android:text="" />
-		</LinearLayout>
-		<ImageView
-			android:layout_width="match_parent"
-			android:layout_height="1px"
-			android:background="@color/gray_d9" />
-		<LinearLayout
-			android:id="@+id/layout_user"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:padding="10dip"
-			android:orientation="horizontal"
-			android:background="@color/white">
-			<TextView
-				android:layout_width="0dip"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:textColor="@color/gray_33"
-				android:textSize="14sp"
-				android:text="预约人信息" />
-			<TextView
-				android:id="@+id/user"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:drawableRight="@drawable/icon_arrow_right"
-				android:drawablePadding="5dip"
-				android:textColor="@color/gray_33"
-				android:textSize="14sp"
-				android:text="" />
-		</LinearLayout>
-		<ImageView
-			android:layout_width="match_parent"
-			android:layout_height="1px"
-			android:background="@color/gray_d9" />
-		<LinearLayout
-			android:id="@+id/layout_reserve_time"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:padding="10dip"
-			android:orientation="horizontal"
-			android:background="@color/white">
-			<TextView
-				android:layout_width="0dip"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:textColor="@color/gray_33"
-				android:textSize="14sp"
-				android:text="时间" />
-			<TextView
-				android:id="@+id/time"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textColor="@color/gray_33"
-				android:textSize="14sp"
-				android:text="" />
-		</LinearLayout>
-		<ImageView
-			android:layout_width="match_parent"
-			android:layout_height="1px"
-			android:background="@color/gray_d9" />
-		<LinearLayout
-			android:id="@+id/layout_price"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:padding="10dip"
-			android:orientation="horizontal"
-			android:background="@color/white">
-			<TextView
-				android:layout_width="0dip"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:textColor="@color/gray_33"
-				android:textSize="14sp"
-				android:text="总价" />
-			<TextView
-				android:id="@+id/fee"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textColor="@color/yellow"
-				android:textSize="14sp"
-				android:text="" />
-		</LinearLayout>
-		<TextView
-			android:id="@+id/butn_commit"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_margin="10dip"
-			android:gravity="center"
-			android:background="@color/gray_33"
-			android:padding="10dip"
-			android:textColor="@color/white"
-			android:textSize="16sp"
-			android:text="@string/butn_commit" />
+				android:orientation="vertical">
+				<com.example.remotetreatment.view.CalendarView
+					android:id="@+id/calendar_view"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content" />
+				<LinearLayout
+					android:id="@+id/layout_doctor"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="10dip"
+					android:padding="10dip"
+					android:orientation="horizontal"
+					android:background="@color/white">
+					<TextView
+						android:layout_width="0dip"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="预约医生" />
+					<TextView
+						android:id="@+id/name"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="" />
+				</LinearLayout>
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="1px"
+					android:background="@color/gray_d9" />
+				<LinearLayout
+					android:id="@+id/layout_user"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="10dip"
+					android:orientation="horizontal"
+					android:background="@color/white">
+					<TextView
+						android:layout_width="0dip"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="预约人信息" />
+					<TextView
+						android:id="@+id/user"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:drawableRight="@drawable/icon_arrow_right"
+						android:drawablePadding="5dip"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="" />
+				</LinearLayout>
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="1px"
+					android:background="@color/gray_d9" />
+				<LinearLayout
+					android:id="@+id/layout_reserve_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="10dip"
+					android:orientation="horizontal"
+					android:background="@color/white">
+					<TextView
+						android:layout_width="0dip"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="时间" />
+					<TextView
+						android:id="@+id/time"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="" />
+				</LinearLayout>
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="1px"
+					android:background="@color/gray_d9" />
+				<LinearLayout
+					android:id="@+id/layout_price"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="10dip"
+					android:orientation="horizontal"
+					android:background="@color/white">
+					<TextView
+						android:layout_width="0dip"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="总价" />
+					<TextView
+						android:id="@+id/fee"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/yellow"
+						android:textSize="14sp"
+						android:text="" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/butn_commit"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="20dip"
+					android:gravity="center"
+					android:background="@drawable/shape_butn_reserve1"
+					android:padding="10dip"
+					android:textColor="@color/white"
+					android:textSize="16sp"
+					android:text="@string/butn_commit" />
+			</LinearLayout>
+		</ScrollView>
 	</LinearLayout>
 	<RelativeLayout
 		android:id="@+id/layout_times_dialog"

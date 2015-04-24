@@ -1,38 +1,92 @@
-<LinearLayout
+<RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/container"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
-	android:background="@color/gray_dd">
-	<include layout="@layout/com_page_header" />
+	android:background="@color/white">
+	<include
+		android:id="@+id/header"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		layout="@layout/com_page_header" />
 	<com.example.remotetreatment.view.CustViewPager
 		android:id="@+id/pager"
 		android:layout_width="match_parent"
-		android:layout_height="0dip"
-		android:layout_weight="1" />
+		android:layout_height="match_parent"
+		android:layout_below="@+id/header"
+		android:layout_above="@+id/group" />
 	<RadioGroup
 		android:id="@+id/group"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:orientation="horizontal">
+		android:layout_alignParentBottom="true"
+		android:orientation="horizontal"
+		android:background="@color/gray_ef"
+		android:paddingTop="5dip"
+		android:paddingBottom="5dip">
 		<RadioButton
 			android:id="@+id/butn_doctor"
 			android:checked="true"
 			style="@style/HomeRadioButton"
+			android:drawableTop="@drawable/sel_home_doctor_bg"
 			android:text="@string/home_doctor" />
 		<RadioButton
 			android:id="@+id/butn_reserve"
 			style="@style/HomeRadioButton"
+			android:drawableTop="@drawable/sel_home_reserve_bg"
 			android:text="@string/home_reserve" />
 		<RadioButton
 			android:id="@+id/butn_record"
 			style="@style/HomeRadioButton"
+			android:drawableTop="@drawable/sel_home_record_bg"
 			android:text="@string/home_record" />
 		<RadioButton
 			android:id="@+id/butn_setting"
 			style="@style/HomeRadioButton"
+			android:drawableTop="@drawable/sel_home_setting_bg"
 			android:text="@string/home_setting" />
 	</RadioGroup>
-</LinearLayout>
+	<RelativeLayout
+		android:id="@+id/layout_action_bar"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@+id/header"
+		android:visibility="gone">
+		<RelativeLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:background="@drawable/map_box_bottom">
+			<TextView
+				android:id="@+id/butn_upload_report"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:padding="10dip"
+				android:textColor="@color/white"
+				android:textSize="14sp"
+				android:text="@string/butn_upload_report" />
+			<ImageView
+				android:layout_width="fill_parent"
+				android:layout_height="1px"
+				android:layout_below="@id/butn_upload_report"
+				android:layout_alignLeft="@id/butn_upload_report"
+				android:layout_alignRight="@id/butn_upload_report"
+				android:layout_marginLeft="20dip"
+				android:layout_marginRight="20dip"
+				android:background="@color/white" />
+			<TextView
+				android:id="@+id/butn_help"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/butn_upload_report"
+				android:layout_centerHorizontal="true"
+				android:padding="10dip"
+				android:textColor="@color/white"
+				android:textSize="14sp"
+				android:text="@string/butn_help" />
+		</RelativeLayout>
+	</RelativeLayout>
+</RelativeLayout>

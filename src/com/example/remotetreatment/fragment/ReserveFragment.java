@@ -74,8 +74,8 @@ public class ReserveFragment extends BaseFragment {
 			}
 		});
 
-		mRefreshLayout.setAdapter(new ReserveAdapter(mAct));
 		mRefreshLayout.useDefaultFooterView();
+		mRefreshLayout.setAdapter(new ReserveAdapter(mAct));
 
 		mRefreshLayout.setDataController(new IDataController() {
 			@Override
@@ -114,8 +114,8 @@ public class ReserveFragment extends BaseFragment {
 				TaskUtil.execute(task, mStatus, 10 * mStatus);
 			}
 		});
-		mRefreshLayout.setRefreshing(true);
-		mRefreshLayout.refresh();
+		
+		refresh();
 	}
 
 	private void refresh() {

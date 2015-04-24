@@ -3,6 +3,10 @@ package com.example.remotetreatment.activity;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,8 +16,10 @@ import android.widget.TextView;
 import com.example.remotetreatment.Base;
 import com.example.remotetreatment.R;
 import com.example.remotetreatment.model.Doctor;
+import com.example.remotetreatment.model.Reserve;
 import com.example.remotetreatment.util.AccountUtil;
 import com.example.remotetreatment.util.DateUtil;
+import com.example.remotetreatment.util.IntentUtil;
 import com.example.remotetreatment.util.Toaster;
 import com.example.remotetreatment.util.Util;
 import com.example.remotetreatment.view.CalendarView;
@@ -47,13 +53,15 @@ public class DoctorReserveActivity extends Activity {
 
 		initHeader();
 		initView();
+
+		registerOrderConfirmReceiver();
 	}
 
 	private void initView() {
 		final Doctor d = mDoctor;
 
 		mCalendarView = (CalendarView) findViewById(R.id.calendar_view);
-		mDoctorName = (TextView) findViewById(R.id.doctor_name);
+		mDoctorName = (TextView) findViewById(R.id.name);
 		mUser = (TextView) findViewById(R.id.user);
 		mTime = (TextView) findViewById(R.id.time);
 		mFee = (TextView) findViewById(R.id.fee);
@@ -72,7 +80,10 @@ public class DoctorReserveActivity extends Activity {
 		mButnCommit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
+				Reserve res = new Reserve();
+				res.setDoctor(d);
+				res.setTime(mTime.getText().toString());
+				IntentUtil.showOrderConfirm(DoctorReserveActivity.this, res);
 			}
 		});
 		mCalendarView.setOnCheckedChangedListener(new OnCheckedChangedListener() {
@@ -173,5 +184,39 @@ public class DoctorReserveActivity extends Activity {
 
 		mHeaderTitle = (TextView) findViewById(R.id.header_title);
 		mHeaderTitle.setText(R.string.header_doctor_reserve);
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		unregisterOrderConfirmReceiver();
+	}
+
+	private void registerOrderConfirmReceiver() {
+		unregisterOrderConfirmReceiver();
+
+		IntentFilter filter = new IntentFilter(Base.ACTION_ORDER_CONFIRMED);
+		mOrderConfirmReceiver = new OrderConfirmReceiver();
+		registerReceiver(mOrderConfirmReceiver, filter);
+	}
+
+	private void unregisterOrderConfirmReceiver() {
+		if (mOrderConfirmReceiver != null) {
+			unregisterReceiver(mOrderConfirmReceiver);
+			mOrderConfirmReceiver = null;
+		}
+	}
+
+	private OrderConfirmReceiver mOrderConfirmReceiver;
+
+	private class OrderConfirmReceiver extends BroadcastReceiver {
+		@Override
+		public void onReceive(Context arg0, Intent arg1) {
+			try {
+				finish();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }

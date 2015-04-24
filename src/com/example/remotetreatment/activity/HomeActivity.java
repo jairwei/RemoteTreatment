@@ -7,10 +7,13 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 
+import com.example.remotetreatment.Base;
 import com.example.remotetreatment.R;
 import com.example.remotetreatment.fragment.BaseFragment;
 import com.example.remotetreatment.fragment.DoctorFragment;
@@ -24,6 +27,9 @@ public class HomeActivity extends FragmentActivity {
 	private ViewPager mPager;
 	private GroupAdapter mAdapter;
 	private RadioGroup mGroup;
+	private View mLayoutActionBar;
+	private View mButnUploadReport;
+	private View mButnHelp;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,9 @@ public class HomeActivity extends FragmentActivity {
 	private void initView() {
 		mPager = (ViewPager) findViewById(R.id.pager);
 		mGroup = (RadioGroup) findViewById(R.id.group);
+		mLayoutActionBar = findViewById(R.id.layout_action_bar);
+		mButnUploadReport = findViewById(R.id.butn_upload_report);
+		mButnHelp = findViewById(R.id.butn_help);
 
 		mAdapter = new GroupAdapter(getSupportFragmentManager());
 		mPager.setOffscreenPageLimit(4);
@@ -54,6 +63,25 @@ public class HomeActivity extends FragmentActivity {
 				} else if (checkedId == R.id.butn_setting) {
 					mPager.setCurrentItem(3);
 				}
+			}
+		});
+
+		mLayoutActionBar.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				closeActionBar();
+			}
+		});
+		mButnUploadReport.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+			}
+		});
+		mButnHelp.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
 			}
 		});
 	}
@@ -116,9 +144,40 @@ public class HomeActivity extends FragmentActivity {
 	}
 
 	TextView mHeaderTitle;
+	TextView mHeaderButnRight;
 
 	private void initHeader() {
 		mHeaderTitle = (TextView) findViewById(R.id.header_title);
 		mHeaderTitle.setText(R.string.app_name);
+
+		mHeaderButnRight = (TextView) findViewById(R.id.header_butn_right);
+		mHeaderButnRight.setCompoundDrawablesWithIntrinsicBounds(R.drawable.butn_ico_save_p, 0, 0, 0);
+		mHeaderButnRight.setVisibility(View.VISIBLE);
+		mHeaderButnRight.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				toggleActionBar();
+			}
+		});
+	}
+
+	int status = Base.STATUS_CLOSED;//
+
+	protected void toggleActionBar() {
+		if (status == Base.STATUS_CLOSED) {
+			openActionBar();
+		} else if (status == Base.STATUS_OPENED) {
+			closeActionBar();
+		}
+	}
+
+	private void openActionBar() {
+		mLayoutActionBar.setVisibility(View.VISIBLE);
+		status = Base.STATUS_OPENED;
+	}
+
+	private void closeActionBar() {
+		mLayoutActionBar.setVisibility(View.GONE);
+		status = Base.STATUS_CLOSED;
 	}
 }

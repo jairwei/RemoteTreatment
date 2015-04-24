@@ -34,5 +34,11 @@
 		<activity
 			android:name="com.example.remotetreatment.activity.DoctorReserveActivity"
 			android:theme="@android:style/Theme.NoTitleBar" />
+		<activity
+			android:name="com.example.remotetreatment.activity.OrderConfirmActivity"
+			android:theme="@android:style/Theme.NoTitleBar" />
+		<activity
+			android:name="com.example.remotetreatment.activity.WriteCommentActivity"
+			android:theme="@android:style/Theme.NoTitleBar" />
 	</application>
 </manifest>

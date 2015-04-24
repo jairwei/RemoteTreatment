@@ -42,7 +42,7 @@
 				android:textSize="14sp"
 				android:text="" />
 			<TextView
-				android:id="@+id/status"
+				android:id="@+id/result"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="5dip"
@@ -52,13 +52,13 @@
 				android:text="" />
 		</LinearLayout>
 		<TextView
-			android:id="@+id/butn_action"
+			android:id="@+id/butn_show_presc"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:background="@drawable/shape_butn_reserve"
 			android:textColor="@color/green"
 			android:textSize="12sp"
-			android:text="@string/butn_reserve" />
+			android:text="@string/butn_show_presc" />
 	</LinearLayout>
 	<ImageView
 		android:layout_width="match_parent"

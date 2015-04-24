@@ -70,10 +70,58 @@ public class ViewHolder {
 		public ReserveHolder(View v) {
 			layoutItem = v.findViewById(R.id.layout_item);
 			avatar = (ImageView) v.findViewById(R.id.avatar);
-			doctorName = (TextView) v.findViewById(R.id.doctor_name);
+			doctorName = (TextView) v.findViewById(R.id.name);
 			time = (TextView) v.findViewById(R.id.time);
 			status = (TextView) v.findViewById(R.id.status);
 			butnAction = (TextView) v.findViewById(R.id.butn_action);
+		}
+	}
+
+	public static class PrescHolder {
+		public View layoutItem;
+
+		public ImageView avatar;
+		public TextView doctorName;
+		public TextView time;
+		public TextView result;
+		public TextView butnShowPresc;
+
+		public PrescHolder(View v) {
+			layoutItem = v.findViewById(R.id.layout_item);
+			avatar = (ImageView) v.findViewById(R.id.avatar);
+			doctorName = (TextView) v.findViewById(R.id.name);
+			time = (TextView) v.findViewById(R.id.time);
+			result = (TextView) v.findViewById(R.id.result);
+			butnShowPresc = (TextView) v.findViewById(R.id.butn_show_presc);
+		}
+	}
+
+	public static class ReportHolder {
+		public View layoutItem;
+
+		public View layoutReport1;
+		public View layoutReport2;
+
+		public ImageView image1;
+		public TextView title1;
+		public TextView time1;
+
+		public ImageView image2;
+		public TextView title2;
+		public TextView time2;
+
+		public ReportHolder(View v) {
+			layoutItem = v.findViewById(R.id.layout_item);
+			layoutReport1 = v.findViewById(R.id.layout_report1);
+			layoutReport2 = v.findViewById(R.id.layout_report2);
+
+			image1 = (ImageView) layoutReport1.findViewById(R.id.image);
+			time1 = (TextView) layoutReport1.findViewById(R.id.time);
+			title1 = (TextView) layoutReport1.findViewById(R.id.title);
+
+			image2 = (ImageView) layoutReport2.findViewById(R.id.image);
+			time2 = (TextView) layoutReport2.findViewById(R.id.time);
+			title2 = (TextView) layoutReport2.findViewById(R.id.title);
 		}
 	}
 }

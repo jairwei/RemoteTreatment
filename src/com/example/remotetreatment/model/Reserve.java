@@ -8,6 +8,7 @@ public class Reserve implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int id;
+	private int timeId;
 	private String time;
 	private Doctor doctor;
 	private int status = STATUS_RESERVE;
@@ -15,13 +16,26 @@ public class Reserve implements Serializable {
 	public static Reserve fromTest(int status, int i) {
 		Doctor d = new Doctor();
 		d.setName("周**" + i);
+		d.setHospital("海总医院");
+		d.setDept("神经病科");
+		d.setTitle("主任医师");
+		d.setEducation("博士");
 
 		Reserve reserve = new Reserve();
 		reserve.setId(i);
+		reserve.setTimeId(i);
 		reserve.setTime("2015-10-12 12:12-13:13");
 		reserve.doctor = d;
 		reserve.status = 1;
 		return reserve;
+	}
+
+	public int getTimeId() {
+		return timeId;
+	}
+
+	public void setTimeId(int timeId) {
+		this.timeId = timeId;
 	}
 
 	public int getId() {

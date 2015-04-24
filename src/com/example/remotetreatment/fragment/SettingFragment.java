@@ -77,23 +77,23 @@ public class SettingFragment extends BaseFragment {
 	private void setUserFace() {
 		UserAccount user = AccountUtil.getUserAccount();
 		if (user == null) {
-			ImageLoaderUtil.display(user.getAvatar(), mAvatar);
-			mName.setText(user.getName());
-			mGender.setText(user.getGender());
-			mIdType.setText(mAct.getResources().getStringArray(R.array.id_type)[user.getIdType()]);
-			mIdNumber.setText(user.getIdNumber());
-			mPhone.setText(user.getPhone());
-			mEmail.setText(user.getEmail());
-
-			mButnLogin.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					IntentUtil.showLogin(mAct);
-				}
-			});
+			// ImageLoaderUtil.display(user.getAvatar(), mAvatar);
+			// mName.setText(user.getName());
+			// mGender.setText(user.getGender());
+			// mIdType.setText(mAct.getResources().getStringArray(R.array.id_type)[user.getIdType()]);
+			// mIdNumber.setText(user.getIdNumber());
+			// mPhone.setText(user.getPhone());
+			// mEmail.setText(user.getEmail());
+			//
+			// mButnLogin.setOnClickListener(new OnClickListener() {
+			// @Override
+			// public void onClick(View v) {
+			// IntentUtil.showLogin(mAct);
+			// }
+			// });
 			mButnLogout.setVisibility(View.GONE);
 		} else {
-			ImageLoaderUtil.display(user.getAvatar(), mAvatar);
+			// ImageLoaderUtil.display(user.getAvatar(), mAvatar);
 			mName.setText(user.getName());
 			mGender.setText(user.getGender());
 			mIdType.setText(mAct.getResources().getStringArray(R.array.id_type)[user.getIdType()]);

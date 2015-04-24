@@ -33,6 +33,6 @@ public class SplashActivity extends Activity {
 					e.printStackTrace();
 				}
 			}
-		}, 1000 * 2);
+		}, 1000 * 1);
 	}
 }

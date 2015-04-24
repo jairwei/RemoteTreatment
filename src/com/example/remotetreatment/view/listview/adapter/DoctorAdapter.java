@@ -67,16 +67,10 @@ public class DoctorAdapter extends AbsListAdapter<Doctor> {
 
 	private void showDetail(Doctor doctor) {
 		IntentUtil.showDoctorDetail(mContext, doctor);
-		// Intent intent = new Intent(Base.ACTION_SHOW_DOCTOR_DETAIL);
-		// intent.putExtra(Base.EXTRA_DOCTOR, doctor);
-		// mContext.sendBroadcast(intent);
 	}
 
 	private void showReserve(Doctor doctor) {
 		IntentUtil.showDoctorReserve(mContext, doctor);
-		// Intent intent = new Intent(Base.ACTION_SHOW_DOCTOR_RESERVE);
-		// intent.putExtra(Base.EXTRA_DOCTOR, doctor);
-		// mContext.sendBroadcast(intent);
 	}
 
 	private void visit(Doctor doctor) {

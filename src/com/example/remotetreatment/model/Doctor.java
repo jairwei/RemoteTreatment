@@ -35,21 +35,21 @@ public class Doctor implements Serializable {
 	private HashMap<String, List<String>> dates;
 
 	public static Doctor fromTest(int i) {
-		Doctor doc = new Doctor();
+		Doctor d = new Doctor();
 
-		doc.setId(i);
-		doc.setName("doctor" + i);
-		doc.setTitle("title" + i);
-		doc.setHospital("hostpital" + i);
-		doc.setDept("dept" + 1);
-		doc.setEducation("education" + i);
-		doc.setExpert("expert" + i);
-		doc.setRegistFee(10 * i + 10);
-		doc.setStar(i);
-		doc.setPartTime("暂无" + i);
-		doc.setIntro("简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介" + i);
-		doc.setScore(i);
-		doc.setComment(i);
+		d.setId(i);
+		d.setName("周**" + i);
+		d.setHospital("海总医院");
+		d.setDept("神经病科");
+		d.setTitle("主任医师");
+		d.setEducation("博士");
+		d.setExpert("擅长擅长擅长擅长擅长擅长擅长" + i);
+		d.setRegistFee(10 * i + 10);
+		d.setStar(i);
+		d.setPartTime("社会兼职社会兼职社会兼职社会兼职社会兼职社会兼职" + i);
+		d.setIntro("简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介" + i);
+		d.setScore(i);
+		d.setComment(i);
 
 		Date today = new Date();
 
@@ -64,9 +64,9 @@ public class Doctor implements Serializable {
 		dates.put(DateUtil.getDate(date1), times);
 		dates.put(DateUtil.getDate(date2), times);
 
-		doc.setDates(dates);
+		d.setDates(dates);
 
-		return doc;
+		return d;
 	}
 
 	public List<String> getDateString() {

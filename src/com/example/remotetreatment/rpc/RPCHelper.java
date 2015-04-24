@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import android.content.Context;
 
 import com.example.remotetreatment.model.Doctor;
+import com.example.remotetreatment.model.Presc;
+import com.example.remotetreatment.model.Report;
 import com.example.remotetreatment.model.Reserve;
 
 public class RPCHelper extends RPCBase {
@@ -20,6 +22,21 @@ public class RPCHelper extends RPCBase {
 			mRPCHelper = new RPCHelper(context.getApplicationContext());
 		}
 		return mRPCHelper;
+	}
+
+	public ArrayList<Report> getReports(int page) {
+		ArrayList<Report> list = new ArrayList<Report>();
+		list.add(Report.fromTest(page * 10 + 0));
+		list.add(Report.fromTest(page * 10 + 1));
+		list.add(Report.fromTest(page * 10 + 2));
+		list.add(Report.fromTest(page * 10 + 3));
+		list.add(Report.fromTest(page * 10 + 4));
+		list.add(Report.fromTest(page * 10 + 5));
+		list.add(Report.fromTest(page * 10 + 6));
+		list.add(Report.fromTest(page * 10 + 7));
+		list.add(Report.fromTest(page * 10 + 8));
+		list.add(Report.fromTest(page * 10 + 9));
+		return list;
 	}
 
 	public ArrayList<Doctor> getDoctors(int page) {
@@ -49,6 +66,21 @@ public class RPCHelper extends RPCBase {
 		list.add(Reserve.fromTest(status, page * 10 + 7));
 		list.add(Reserve.fromTest(status, page * 10 + 8));
 		list.add(Reserve.fromTest(status, page * 10 + 9));
+		return list;
+	}
+
+	public ArrayList<Presc> getPrescs(int page) {
+		ArrayList<Presc> list = new ArrayList<Presc>();
+		list.add(Presc.fromTest(page * 10 + 0));
+		list.add(Presc.fromTest(page * 10 + 1));
+		list.add(Presc.fromTest(page * 10 + 2));
+		list.add(Presc.fromTest(page * 10 + 3));
+		list.add(Presc.fromTest(page * 10 + 4));
+		list.add(Presc.fromTest(page * 10 + 5));
+		list.add(Presc.fromTest(page * 10 + 6));
+		list.add(Presc.fromTest(page * 10 + 7));
+		list.add(Presc.fromTest(page * 10 + 8));
+		list.add(Presc.fromTest(page * 10 + 9));
 		return list;
 	}
 

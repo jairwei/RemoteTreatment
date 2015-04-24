@@ -1,0 +1,150 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/container"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@color/gray_dd">
+	<include layout="@layout/com_page_header" />
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scrollbars="none">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+			<LinearLayout
+				android:id="@+id/layout_item"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:gravity="center_vertical"
+				android:padding="10dip"
+				android:background="@color/white">
+				<ImageView
+					android:id="@+id/avatar"
+					android:layout_width="80dip"
+					android:layout_height="80dip"
+					android:background="@color/gray_33"
+					android:src="@drawable/doctor"
+					android:scaleType="centerCrop" />
+				<LinearLayout
+					android:layout_width="0dip"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:layout_marginLeft="10dip"
+					android:orientation="vertical">
+					<TextView
+						android:id="@+id/name"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="" />
+					<TextView
+						android:id="@+id/time"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="5dip"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="" />
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="5dip"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/hospital"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/gray_33"
+							android:textSize="14sp"
+							android:text="" />
+						<TextView
+							android:id="@+id/dept"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="5dip"
+							android:textColor="@color/gray_33"
+							android:textSize="14sp"
+							android:text="" />
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/layout_star"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:background="@android:color/white"
+				android:layout_marginTop="10dip"
+				android:padding="10dip">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:gravity="center_vertical">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="@string/star_yishu" />
+					<RatingBar
+						android:id="@+id/star_yishu"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="10dip"
+						android:max="5"
+						style="@style/RatingBar" />
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="10dip"
+					android:orientation="horizontal"
+					android:gravity="center_vertical">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="@string/star_taidu" />
+					<RatingBar
+						android:id="@+id/star_taidu"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="10dip"
+						android:max="5"
+						style="@style/RatingBar" />
+				</LinearLayout>
+			</LinearLayout>
+			<EditText
+				android:id="@+id/content"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/bg_inputarea"
+				android:layout_margin="10dip"
+				android:gravity="left|top"
+				android:lines="4"
+				android:textColor="@color/gray_33"
+				android:textColorHint="@color/gray_dd"
+				android:textSize="14sp"
+				android:hint="@string/comment_hint" />
+			<TextView
+				android:id="@+id/butn_write_comment"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="20dip"
+				android:gravity="center"
+				android:background="@drawable/shape_butn_reserve1"
+				android:padding="10dip"
+				android:textColor="@color/white"
+				android:textSize="16sp"
+				android:text="@string/butn_write_comment" />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

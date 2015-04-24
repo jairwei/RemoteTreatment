@@ -1,0 +1,146 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/container"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@color/gray_dd">
+	<include layout="@layout/com_page_header" />
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scrollbars="none">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/white"
+				android:orientation="vertical">
+				<LinearLayout
+					android:id="@+id/layout_doctor"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="10dip"
+					android:orientation="horizontal">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="@string/order_doctor" />
+					<TextView
+						android:id="@+id/name"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="5dip"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="2222" />
+				</LinearLayout>
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="1px"
+					android:background="@color/gray_dd" />
+				<LinearLayout
+					android:id="@+id/layout_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="10dip"
+					android:orientation="horizontal">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="@string/order_time" />
+					<TextView
+						android:id="@+id/time"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="5dip"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="2222" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dip"
+				android:background="@color/white"
+				android:orientation="vertical">
+				<LinearLayout
+					android:id="@+id/layout_pay_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="10dip"
+					android:orientation="horizontal">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="@string/order_pay_title" />
+					<TextView
+						android:id="@+id/fee"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="5dip"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="2222" />
+				</LinearLayout>
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="1px"
+					android:background="@color/gray_dd" />
+				<RadioGroup
+					android:id="@+id/group"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+					<RadioButton
+						android:id="@+id/butn_wxpay"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:checked="true"
+						android:padding="10dip"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="@string/order_wxpay"
+						android:drawableRight="@drawable/sel_home_doctor_bg"
+						android:button="@null" />
+					<ImageView
+						android:layout_width="match_parent"
+						android:layout_height="1px"
+						android:background="@color/gray_dd" />
+					<RadioButton
+						android:id="@+id/butn_alipay"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:padding="10dip"
+						android:textColor="@color/gray_33"
+						android:textSize="14sp"
+						android:text="@string/order_alipay"
+						android:drawableRight="@drawable/sel_home_doctor_bg"
+						android:button="@null" />
+				</RadioGroup>
+			</LinearLayout>
+			<TextView
+				android:id="@+id/butn_confirm_pay"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="20dip"
+				android:gravity="center"
+				android:background="@drawable/shape_butn_reserve1"
+				android:padding="10dip"
+				android:textColor="@color/white"
+				android:textSize="16sp"
+				android:text="@string/butn_confirm_pay" />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

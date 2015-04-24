@@ -1,6 +1,10 @@
 package com.example.remotetreatment.activity;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,7 +15,6 @@ import android.widget.TextView;
 import com.example.remotetreatment.Base;
 import com.example.remotetreatment.R;
 import com.example.remotetreatment.model.Doctor;
-import com.example.remotetreatment.util.ImageLoaderUtil;
 import com.example.remotetreatment.util.IntentUtil;
 import com.example.remotetreatment.util.Toaster;
 
@@ -21,6 +24,7 @@ public class DoctorDetailActivity extends Activity {
 	private ImageView mAvatar;
 	private TextView mName;
 	private TextView mEducation;
+	private TextView mTitle;
 	private TextView mHospital;
 	private TextView mDept;
 	private TextView mFee;
@@ -46,6 +50,8 @@ public class DoctorDetailActivity extends Activity {
 
 		initHeader();
 		initView();
+
+		registerOrderConfirmReceiver();
 	}
 
 	private void initView() {
@@ -54,6 +60,7 @@ public class DoctorDetailActivity extends Activity {
 		mAvatar = (ImageView) findViewById(R.id.avatar);
 		mName = (TextView) findViewById(R.id.name);
 		mEducation = (TextView) findViewById(R.id.education);
+		mTitle = (TextView) findViewById(R.id.title);
 		mHospital = (TextView) findViewById(R.id.hospital);
 		mDept = (TextView) findViewById(R.id.dept);
 		mFee = (TextView) findViewById(R.id.fee);
@@ -65,9 +72,12 @@ public class DoctorDetailActivity extends Activity {
 		mPartTime = (TextView) findViewById(R.id.part_time);
 		mIntro = (TextView) findViewById(R.id.intro);
 
-		ImageLoaderUtil.display(d.getAvatar(), mAvatar);
-		mName.setText(d.getName() + " " + d.getTitle() + " " + d.getEducation());
-		mHospital.setText(d.getHospital() + " " + d.getDept());
+		// ImageLoaderUtil.display(d.getAvatar(), mAvatar);
+		mName.setText(d.getName());
+		mEducation.setText(d.getEducation());
+		mTitle.setText(d.getTitle());
+		mHospital.setText(d.getHospital());
+		mDept.setText(d.getDept());
 		mFee.setText(getString(R.string.regist_fee1, d.getRegistFee()));
 		mStar.setRating(d.getStar());
 		mScore.setText(getString(R.string.score, d.getScore()));
@@ -100,5 +110,39 @@ public class DoctorDetailActivity extends Activity {
 
 		mHeaderTitle = (TextView) findViewById(R.id.header_title);
 		mHeaderTitle.setText(R.string.header_doctor_detail);
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		unregisterOrderConfirmReceiver();
+	}
+
+	private void registerOrderConfirmReceiver() {
+		unregisterOrderConfirmReceiver();
+
+		IntentFilter filter = new IntentFilter(Base.ACTION_ORDER_CONFIRMED);
+		mOrderConfirmReceiver = new OrderConfirmReceiver();
+		registerReceiver(mOrderConfirmReceiver, filter);
+	}
+
+	private void unregisterOrderConfirmReceiver() {
+		if (mOrderConfirmReceiver != null) {
+			unregisterReceiver(mOrderConfirmReceiver);
+			mOrderConfirmReceiver = null;
+		}
+	}
+
+	private OrderConfirmReceiver mOrderConfirmReceiver;
+
+	private class OrderConfirmReceiver extends BroadcastReceiver {
+		@Override
+		public void onReceive(Context arg0, Intent arg1) {
+			try {
+				finish();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }

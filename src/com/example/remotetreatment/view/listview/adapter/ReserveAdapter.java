@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.example.remotetreatment.R;
 import com.example.remotetreatment.model.Reserve;
 import com.example.remotetreatment.model.ViewHolder.ReserveHolder;
-import com.example.remotetreatment.util.ImageLoaderUtil;
+import com.example.remotetreatment.util.IntentUtil;
 
 public class ReserveAdapter extends AbsListAdapter<Reserve> {
 
@@ -28,7 +28,7 @@ public class ReserveAdapter extends AbsListAdapter<Reserve> {
 			final Reserve r = getItem(position);
 			final ReserveHolder h = new ReserveHolder(convertView);
 
-			ImageLoaderUtil.display(r.getDoctor().getAvatar(), h.avatar);
+			// ImageLoaderUtil.display(r.getDoctor().getAvatar(), h.avatar);
 			h.doctorName.setText(r.getDoctor().getName());
 			h.time.setText(r.getTime());
 
@@ -53,6 +53,7 @@ public class ReserveAdapter extends AbsListAdapter<Reserve> {
 			h.layoutItem.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
+					IntentUtil.showWriteComment(mContext, r);
 				}
 			});
 		} catch (Exception e) {

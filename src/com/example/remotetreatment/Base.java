@@ -30,8 +30,9 @@ public class Base {
 	// public static final String ACTION_SHOW_DOCTOR_DETAIL = "com.remotetreatment.actions.show_doctor_detail";
 	// public static final String ACTION_SHOW_DOCTOR_RESERVE = "com.remotetreatment.actions.show_doctor_reserve";
 	// public static final String ACTION_SHOW_DOCTOR_CONFIRM = "com.remotetreatment.actions.show_doctor_confirm";
-	// public static final String ACTION_SHOW_DOCTOR_LIST = "com.remotetreatment.actions.show_doctor_list";
+	public static final String ACTION_ORDER_CONFIRMED = "com.remotetreatment.actions.order_confirmed";
 
+	public static final String EXTRA_RESERVE = "EXTRA_RESERVE";
 	public static final String EXTRA_DOCTOR = "EXTRA_DOCTOR";
 
 	public static final String ACCOUNT_FILE = "user_account.ser";
@@ -42,5 +43,10 @@ public class Base {
 
 	public static String[] WEEKS_HEADER = new String[] { "日", "一", "二", "三", "四", "五", "六" };
 	public static String[] WEEKS = new String[] { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
+
+	public static final int STATUS_CLOSED = 1;
+	public static final int STATUS_CLOSING = 2;
+	public static final int STATUS_OPENED = 3;
+	public static final int STATUS_OPENING = 4;
 
 }

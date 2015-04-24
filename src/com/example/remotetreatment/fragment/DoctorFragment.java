@@ -63,8 +63,8 @@ public class DoctorFragment extends BaseFragment {
 
 	private void initView() {
 		mRefreshLayout = (PullToRefreshListView) mRoot.findViewById(R.id.refresh_layout);
-		mRefreshLayout.setAdapter(new DoctorAdapter(mAct));
 		mRefreshLayout.useDefaultFooterView();
+		mRefreshLayout.setAdapter(new DoctorAdapter(mAct));
 
 		mRefreshLayout.setDataController(new IDataController() {
 			@Override

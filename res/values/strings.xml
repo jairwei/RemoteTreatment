@@ -6,9 +6,13 @@
 	<string name="header_register">注册</string>
 	<string name="header_doctor_detail">医生详情</string>
 	<string name="header_doctor_reserve">预约就诊</string>
+	<string name="header_order_confirm">订单确认</string>
+	<string name="header_write_comment">评价医生</string>
 	<!-- BUTTON -->
 	<string name="butn_back">返回</string>
 	<string name="butn_commit">提交订单</string>
+	<string name="butn_write_comment">提交评价</string>
+	<string name="butn_confirm_pay">确认支付</string>
 	<string name="butn_confirm">确定</string>
 	<string name="butn_cancel">取消</string>
 	<string name="butn_register">注册</string>
@@ -16,6 +20,8 @@
 	<string name="butn_logout">退出登陆</string>
 	<string name="butn_comment">评价</string>
 	<string name="butn_pay">付款</string>
+	<string name="butn_upload_report">上传检查报告</string>
+	<string name="butn_help">帮助与反馈</string>
 	<!-- HOME -->
 	<string name="home_doctor">doctor</string>
 	<string name="home_reserve">reserve</string>
@@ -35,4 +41,16 @@
 	<string name="status_no_pay">尚未支付</string>
 	<string name="status_complate">已成功就诊</string>
 	<string name="status_cancel">取消预约</string>
+	<string name="order_doctor">预约医生：</string>
+	<string name="order_time">预约时间：</string>
+	<string name="order_pay_title">支付总价：</string>
+	<string name="order_wxpay">微信支付</string>
+	<string name="order_alipay">支付宝支付</string>
+	<!-- Record -->
+	<string name="butn_presc">就诊处方</string>
+	<string name="butn_report">检查报告</string>
+	<string name="butn_show_presc">查看药方</string>
+	<string name="star_yishu">医术</string>
+	<string name="star_taidu">态度</string>
+	<string name="comment_hint">请输入您的评价…</string>
 </resources>
