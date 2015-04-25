@@ -26,7 +26,7 @@ public class OrderConfirmActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.act_order_confirm);
 
-		mReserve = (Reserve) getIntent().getSerializableExtra(Base.EXTRA_DOCTOR);
+		mReserve = (Reserve) getIntent().getSerializableExtra(Base.EXTRA_RESERVE);
 		if (mReserve == null) {
 			Toaster.show("reserve is null.");
 			finish();
